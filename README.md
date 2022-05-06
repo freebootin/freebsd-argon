@@ -1,3 +1,3 @@
 # freebsd-argon
 
-This is an atempt at porting the "propriatary" scripts from Argon's One M.2 case to FreeBSD.
+This is an attempt at porting the "proprietary" scripts from Argon's One M.2 case to FreeBSD.
