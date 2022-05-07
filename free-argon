@@ -19,3 +19,18 @@ argon_check_pkg() {
     echo "OK"
   fi
 }
+
+# TODO: Here in the original script packages were installed to handle GPIO, SMbus, and i2c.
+# Those packages don't exist in FreeBSD. Instead look to use code from these repos 
+# to emulate their functionality.
+# https://github.com/gonzoua/freebsd-gpio
+# https://github.com/evadot/fbsd_gpio_py
+
+
+# TODO: Run configurations that 'raspi-config` would normally do.
+# Needed settings:
+# raspi-config nonint do_i2c 0
+# raspi-config nonint do_serial 2
+#
+# This will probably have to be extracted from `raspi-config` and de-linuxized.
+# https://github.com/asb/raspi-config/blob/master/raspi-config
