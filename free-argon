@@ -1,0 +1,21 @@
+#!/bin/sh
+# This is a port of the Argon One install script.
+# Ported by Patrick Kane
+# https://github.com/freebootin/freebsd-argon
+
+argon_create_file() {
+  if [ -f "$1" ]; then 
+    sudo rm "$1"
+  fi
+  sudo touch "$1"
+  sudo chmod 666 "$1"
+}
+
+argon_check_pkg() {
+  RESULT=$(pkg query %n | grep -F -w "$1")
+  if [ "${RESULT}" = "" ]; then
+    echo "NG"
+  else
+    echo "OK"
+  fi
+}
